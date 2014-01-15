@@ -23,6 +23,7 @@ helpers do
   end
   
   def protected!
-    halt [ 401, 'Not Authorized' ] unless admin?
+    # halt [ 401, 'Not Authorized' ] unless admin?
+     redirect to('/login') unless admin?
   end
 end
