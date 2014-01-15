@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title><%= @judul || "STIKESMB Hotspot Login" %></title>
+        <meta name="description" content="">
+        <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+       
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+        <%= css :style %>
+        
+        <%= js :modernizr %>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->  
+        <div class="bungkus">
+                   <header>
+                       <div class="baris">
+                           <h1><%= @judul || "STIKESMB Hotspot Login" %></h1>
+                       </div>
+                   </header>
+                   <section class="baris">
+                    
+                    <%= yield %>
+
+                   </section>
+                   
+
+                   <footer class="baris">
+                        <div class="kiri">
+                            <p>&copy; 2013 STIKES Muhammadiyah Banjarmasin</p>
+                        </div>
+                        <div class="kanan">
+                          <p>
+                            <a href="http://stikes-mb.ac.id">
+                              <i class="foundicon-rss"></i>
+                            </a>
+                            <a href="http://fb.me/opstikesmb ">
+                              <i class="foundicon-facebook"></i>
+                            </a>
+                            <a href="https://twitter.com/stikesmb">
+                              <i class="foundicon-twitter"></i>
+                            </a>
+                            <a href="http://www.youtube.com/channel/UCdur7Ej1uxy-D_yjNenfUvg/videos">
+                              <i class="foundicon-youtube"></i>
+                            </a>
+                            <a href="gplus.to/stikesmb">
+                              <i class="foundicon-google-plus"></i>
+                            </a>
+                          </p>
+                        </div>
+                   </footer>
+               </div>       
+        <%= js :jquery %>
+         <%= js :plugins %>
+         <%= js :main %>
+        
+       
+    </body>
+</html>

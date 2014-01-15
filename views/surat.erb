@@ -1,0 +1,80 @@
+<div class="suratwrap">
+	<!-- data pemohon -->
+	<h3>Pemohon</h3>
+	<table>
+		<tr style="background:none;color:#000">
+			<td>
+				Nama
+			</td>
+			<td>:</td>
+			<td>
+				<%= @user.nama %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				NPM	
+			</td>
+			<td>:</td>
+			<td>
+				
+				<%= @user.npm %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Unit kerja / Prodi	
+			</td>
+			<td>:</td>
+			<td>
+				
+				<%= @user.unit.slug %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Email
+			</td>
+			<td>:</td>
+			<td>
+				<%= @user.email %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Telp/Hp
+			</td>
+			<td>:</td>
+			<td>
+				<%= @user.hp %>
+			</td>
+		</tr>	
+		<tr>
+			<td>Alamat IP</td>
+			<td>:</td>
+			<td>
+				<%= @user.ip.ipcat + @user.ipnum.to_s %>
+			</td>
+		</tr>
+		<tr>
+			<td>Mac Address</td>
+			<td>:</td>
+			<td>
+				<%= @user.macaddr %>
+			</td>
+		</tr>
+	</table>
+
+	<!-- peraturan -->
+
+	<%= erb :isisurat %>
+    <h3>Pernyataan</h3>
+    <p>
+    	Saya menyatakan telah membaca dan menyetujui Tata Tertib Penggunaan Fasilitas Layanan Internet yang di kelola oleh STIKES Muhammadiyah Banjarmasin, dan bersedia menerima sanksinya bila melakukan pelanggaran. 
+    </p>
+    <p class="textkanan">
+    	Banjarmasin, <%= @time.strftime(fmt='%d-%m-%Y') %>
+    </p>
+    <p class="ttd" style="clear:both">Pemohon <span> <%= @user.nama %> </span></p>
+
+</div>

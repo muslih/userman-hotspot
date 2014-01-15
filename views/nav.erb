@@ -1,0 +1,10 @@
+<% if admin? %>
+	<button style="float:left;padding: 11px 10px;margin-right:5px" onclick="window.location.href='/logout'">Keluar</button>
+	<button style="float:left;padding: 11px 10px;" class="cgenerate">Generate</button>
+<% end %> 
+<div class="cari" style="float:right">
+	<form action="/data/cari" method="get">
+	  <input type="search" name="query">
+	  <button>Cari</button>
+	</form>
+</div>

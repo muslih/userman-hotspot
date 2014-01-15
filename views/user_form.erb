@@ -1,0 +1,83 @@
+<!-- input npm -->
+ <label for="npm">NIK/NPM <span>wajib diisi, tanpa spasi</span></label>
+ <input id="npm" type="text" name="user[npm]" 
+ <% if @user.respond_to?('npm') %>
+ 	value="<%= @user.npm %>"	
+ <% end %> 
+ >
+
+ <!-- input nama -->
+ <label for="nama">Nama Lengkap <span> wajib diisi </span></label>
+ <input id="nama" type="text" name="user[nama]"
+ <% if  @user.respond_to?('nama') %>
+	value="<%= @user.nama %>"	
+ <% end %>
+ >
+
+ <!-- input unit kerja/prodi -->
+ <label for="prodi">Unit Kerja/Prodi <span> wajib diisi </span></label>
+<!--  <input id="prodi" type="text" name="user[prodi]" > -->
+ <select name="user[unit_id]" id="prodi">
+   <% if  defined?@user.unit.slug  %>
+   	  <option value="<%= @user.unit_id %>"><%= @user.unit.slug %></option>
+   <% end %>
+   <option >-------</option>
+   <% @unit.each do |u| %>
+     <option value="<%= u.id %>"><%= u.slug %></option>
+   <% end %> 
+ </select>
+
+ <!-- input password -->
+ <label for="pass">Kata sandi <span>wajib diisi, minimal 6 karakter</span></label>
+ <input id="pass" type="password" name="user[password]" 
+ <% if @user.respond_to?('password') %>
+ 	value="<%= @user.password %>"	
+ <% end %>
+ >
+
+ <!-- input email -->
+ <label for="email">Email <span>wajib disisi</span></label>
+ <input id="email" type="text" name="user[email]" 
+ <% if  @user.respond_to?('email') %>
+ 	value="<%= @user.email %>"	
+ <% end %>
+ >
+
+ <!-- input hp -->
+ <label for="hp">Telpon/Hp <span>wajib diisi untuk pemberitahuan konfirmasi</span></label>
+ <input id="hp" type="number" name="user[hp]"
+ <% if  @user.respond_to?('hp') %>
+ 	value="<%= @user.hp %>"	
+ <% end %>
+ >
+
+
+ <!-- input jenis laptop -->
+ <label for="laptop">Jenis Laptop <span> wajib diisi </span></label>
+ <!--  <input id="prodi" type="text" name="user[prodi]" > -->
+ <select name="user[laptop]" id="prodi">
+ 	<% if  @user.laptop %>
+	 	<option value="<%= @user.laptop %>"><%= @user.laptop %></option>	
+	<% else %>
+   		<option value="---">--pilih laptop--</option>
+   <% end %>
+   <option value="acer">Acer</option>
+   <option value="toshiba">Toshiba</option>
+   <option value="asus">Asus</option>
+   <option value="toshiba">Toshiba</option>
+   <option value="hp">Hp</option>
+   <option value="lenovo">Lenovo</option>
+   <option value="sony">Sony</option>
+   <option value="toshiba">Toshiba</option>
+ </select>
+
+ <!-- macaddr -->
+
+  <label for="macaddr">Mac Address </label>
+ <input id="macaddr" name="user[macaddr]"
+ <% if  @user.respond_to?('macaddr') %>
+ 	value="<%= @user.macaddr %>"	
+ <% end %>
+ >
+
+ 

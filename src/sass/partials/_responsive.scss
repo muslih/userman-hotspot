@@ -1,0 +1,100 @@
+/*******************************************************************************/
+/*     responsive
+/*******************************************************************************/
+@import 'zeen-resp';
+
+@media only screen and (max-width: 760px) {
+}
+
+@media only screen and (max-width: 600px){
+	body{
+		margin-top:10px;
+	}
+	section{
+		margin-bottom:10px !important;
+	}
+	.kanan,.kiri{
+		float:none;
+		text-align:left;
+	}
+	.popupakses{
+		.exit{
+			top:15px;
+			right:10%;
+		}
+		article{
+			top:10%;
+			bottom:10%;
+			left:10%;
+			right:10%;
+		}	
+	}
+	.popupsyarat{
+		.exit{
+			top:15px;
+			right:10%;
+		}
+		article{
+			top:10%;
+			bottom:10%;
+			left:10%;
+			right:10%;
+		}
+	}
+	.iklan{
+		display:none;
+	}
+	.resp{
+		display:block;
+	}
+}
+// 	#beli{
+// 		text-align: center;
+// 		p{
+// 			width: 100%;
+// 			clear: both;
+// 			margin-bottom: 10px;
+// 		}
+// 		button{
+// 			float: none;
+// 		}
+// 	}
+	
+// 	aside{
+// 		section{
+// 			margin-top:20px;
+// 		}
+// 		article{
+// 			text-align:center;
+// 		}
+// 		p{
+// 			text-align:center;
+// 		}
+// 	}
+
+// 	footer{
+// 		article{
+// 			text-align:center;
+// 		}
+// 		p{
+// 			text-align:center;
+// 		}
+// 		#kredit{
+// 			text-align:center;
+// 		}
+// 	}
+// }
+
+
+// @media only screen and (max-width: 450px){
+
+// 	#slide{
+// 		display:none;
+// 	}
+// 	nav{
+// 		li{
+// 			display:block;
+// 			float: none;
+// 		}
+// 	}
+// }

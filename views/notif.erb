@@ -1,0 +1,17 @@
+<% if flash[:error] %> 
+<article class="error">
+   <p><%= flash[:error] %></p>
+</article>
+<% end %>
+
+<% if flash[:halt] %> 
+<article class="error">
+   <p><%= flash[:halt] %></p>
+</article>
+<% end %> 
+
+<% if flash[:sukses] %> 
+<article class="sukses">
+   <p><%= flash[:sukses] %></p>
+</article>
+<% end %> 

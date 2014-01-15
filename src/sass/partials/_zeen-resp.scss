@@ -1,0 +1,17 @@
+//responsive zeengrid 
+@media only screen and (max-width: 600px) {
+	.baris{
+		max-width:600px;
+		[class*="zeen"]{
+			width: 100%;
+			margin-left:0;
+		}
+	}
+}
+
+
+
+
+
+
+

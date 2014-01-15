@@ -1,0 +1,70 @@
+<%= erb :nav %>
+<textarea name="generate" id="generate"  style="margin-bottom:15px;">
+<% @users.each do |user| 
+	
+%>add name="<%= user.nama %>" pasword=<%= user.password %> address=<%= user.ip.ipcat + user.ipnum.to_s %> profile=<%= user.unit.kategori %>
+<% end %> 
+</textarea>
+
+<%= erb :notif %>
+
+<p style="clear:both">
+	Saat ini ada total <strong><%= @users.count %></strong> mahasiswa yang mendaftar
+</p>
+
+<!-- <%= settings.root %> -->
+
+
+
+<table>
+	<tr>
+		<th>NPM</th>
+		<th>Nama</th>
+		<th>Hp</th>
+		<th>Status</th>
+		<th>Ip Address</th>
+		<th>Mac Address</th>
+		<th>Waktu</th>
+	</tr>
+	<% @users.each do |user| %> 
+	<tr>
+		<td>
+			<a href="/data/<%= user.npm %>"><%= user.npm %></a>
+			
+		</td>
+		<td>
+			<%= user.nama %>
+		</td>
+		<td>
+			<%= user.hp %>
+		</td>
+		<td>
+			<% if user.status %>
+				<a class="hijau" href="/data/<%= user.npm %>/status/0" class="true">on</a>
+			<% else %>
+				<a class="merah"href="/data/<%= user.npm %>/status/1" class="false">off</a>
+			<% end %> 
+		</td>
+		<td>
+			<%= user.ip.ipcat + user.ipnum.to_s %>
+		</td>
+		<td>
+			<%if user.macaddr %>
+				<%= user.macaddr %>
+			<%else%>
+				<a class="merah"class="false">kosong</a>
+			<%end%>
+		</td>
+		<!-- <td>
+			<% if user.statik %>
+				<a class="hijau" href="/data/<%= user.npm %>/statik/0" class="true">on</a>
+			<% else %>
+				<a class="merah"href="/data/<%= user.npm %>/statik/1" class="false">off</a>
+			<% end %>
+		</td> -->
+		<td>
+			<%= user.created_at %>
+		</td>
+	</tr>
+	<% end %> 
+</table>

@@ -1,0 +1,114 @@
+<%= erb :notif %>
+
+<table>
+	<tr style="background:none;color:#000">
+		<td>
+			Nama
+		</td>
+		<td>:</td>
+		<td>
+			<%= @user.nama %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Unit kerja / Prodi	
+		</td>
+		<td>:</td>
+		<td>
+			
+			<%= @user.unit.slug %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Email
+		</td>
+		<td>:</td>
+		<td>
+			<%= @user.email %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Telp/Hp
+		</td>
+		<td>:</td>
+		<td>
+			<%= @user.hp %>
+		</td>
+	</tr>
+	<tr>
+		<td>Laptop</td>
+		<td>:</td>
+		<td>
+			<%= @user.laptop %>
+		</td>
+	</tr>	
+	<tr>
+		<td>Alamat IP</td>
+		<td>:</td>
+		<td>
+			<%= @user.ip.ipcat + @user.ipnum.to_s %>
+		</td>
+	</tr>
+	
+
+	<tr>
+		<td>
+			Status User
+		</td>
+		<td>:</td>
+		<td>
+			<% if @user.status %>
+				<a class="hijau" href="/data/<%= @user.npm %>/status/0" class="true">on</a>
+			<% else %>
+				<a class="merah"href="/data/<%= @user.npm %>/status/1" class="false">off</a>
+			<% end %> 
+		</td>
+	</tr>
+	<tr>
+		<td>Mac Address</td>
+		<td>:</td>
+		<td>
+			<%if @user.status %>
+				<a class="hijau"><%= @user.macaddr %></a>
+				
+			<%else%>
+				<a class="merah">Belum</a>
+			<%end%>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Waktu Request
+		</td>
+		<td>:</td>
+		<td>
+			<%= @user.created_at %>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="border-bottom:none;">
+			<button onclick="window.location.href='/data'" style="float:left;">Kembali</button>
+			
+			<form action="/daftar/<%= @user.npm %>" method="POST" style="float:left;margin:0 5px 0 5px">
+				<input type="hidden" name="_method" value="DELETE">
+				<button>Hapus</button>
+			</form>
+			
+			<button onclick="window.location.href='/data/<%= @user.npm %>/edit'">Edit</button>
+			<% if @user.status %>
+				<button onclick="window.location.href='/data/<%= @user.npm %>/surat'">Surat</button>
+			<% end %> 
+			
+			<button class="cgenerate">Generate</button>
+			
+		</td>
+	</tr>
+</table>
+
+<textarea name="generate" id="generate" >
+add name="<%= @user.nama %>" pasword=<%= @user.password %> address=<%= @user.ip.ipcat + @user.ipnum.to_s %> profile=<%= @user.unit.kategori %>
+</textarea>

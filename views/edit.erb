@@ -1,0 +1,9 @@
+<article >
+<form method="post" action="/daftar/<%= @user.npm %>" style="overflow:initial">
+  <input type="hidden" name="_method" value="PUT">
+  <%= erb :user_form %>
+  <button>Update</button>
+  
+</form>
+<button style="float:left;margin-left:15px;clear:none" onclick="window.location.href='/data'" >Kembali</button>
+</article>

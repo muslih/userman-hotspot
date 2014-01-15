@@ -1,0 +1,42 @@
+/*******************************************************************************
+
+Title: paduhost
+Date: 19 Juni 2013
+Author: Zeen Studio (http://zeen-studio.com)
+
+********************************************************************************
+
+	1  zeengrid
+	2  general
+	3  header
+	4  section
+	5  aside
+	6  footer
+	7  fontawesome
+	8  responsive
+
+*******************************************************************************/
+// main
+@import "compass/css3";
+@import "partials/variable";
+@import "partials/mixins";
+@import "partials/settings";
+
+//  zeen grid
+@import 'partials/zeen';
+
+// style umum
+@import 'partials/general';
+
+// style untuk foundation icon
+// @import "partials/general_zeenicons";
+
+// style untuk foundation iconsocial
+@import "foundation_icons_social/social_foundicons";
+
+// style untuk responsive
+@import "partials/responsive";
+
+
+
+

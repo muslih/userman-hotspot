@@ -1,0 +1,44 @@
+<% if flash[:error] %> 
+<article class="error">
+   <p><%= flash[:error] %></p>
+</article>
+<% end %>
+
+<% if flash[:halt] %> 
+<article class="error">
+   <p><%= flash[:halt] %></p>
+</article>
+<% end %> 
+
+<% if flash[:sukses] %> 
+<article class="sukses">
+   <p><%= flash[:sukses] %></p>
+</article>
+<% end %> 
+
+
+<article >
+<form method="POST" action="/daftar" >
+  <%= erb :user_form %>
+  
+  
+  <input type="hidden" name="user[ip_id]" value="<%= Ip.first.id %>">
+  <!-- captcha -->
+  
+  
+  <div class="pernyataan">
+    <!-- input pernyataan kesetujuan  -->
+  <input id="pernyataan" type="checkbox" name="pernyataan" /><p style="margin-top:0px;margin-left:25px"> Dengan ini saya menyatakan setuju, dengan  <a class="syaratKetentuan">syarat dan ketentuan</a> akses internet dan intranet STIKES Muhammadiyah Banjarmasin yabg berlaku!</p>
+
+    <button style="float:left;clear:none;margin-right:15px;" onclick="window.location.href='http://higspeedhotspot.stikesmb.net'">Kembali</button>
+    <div id="setuju" style="float:left">  
+      <button  style="float:left">Saya Setuju</button>
+      <button style="float:left;margin-left:15px;clear:none" onclick="formReset()" >Reset</button>
+      <!-- <input type="reset" value="reset"> --> 
+    </div>
+  </div>
+</form>
+</article>
+
+
+ 
